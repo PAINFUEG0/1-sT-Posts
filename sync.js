@@ -11,15 +11,16 @@ const contentSchema = new mongoose.Schema({ blogs: [postSchema], news: [postSche
 
 const Content = mongoose.models.Content || mongoose.model("Content", contentSchema, "content");
 
-/** @param {"news" | "blogs"} _ */
-const readPosts = (_) =>
+/** @param {"news" | "blogs"} T */
+const readPosts = (T) =>
   fs
-    .readdirSync(path.resolve(import.meta.dirname, _))
-    .filter((id) => fs.statSync(path.resolve(import.meta.dirname, _, id)).isDirectory())
+    .readdirSync(path.resolve(import.meta.dirname, T))
+    .filter((id) => fs.statSync(path.resolve(import.meta.dirname, T, id)).isDirectory())
     .map((id) => ({
       id,
-      ...JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, _, id, "meta.json"), "utf8")),
-      uri: `/${_}/${id}`,
+      image: `https://github.com/PAINFUEG0/1-sT-Posts/refs/heads/main/${T}/${id}/index.png`,
+      ...JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, T, id, "meta.json"), "utf8")),
+      uri: `https://raw.githubusercontent.com/PAINFUEG0/1-sT-Posts/refs/heads/main/${T}/${id}/index.html`,
     }));
 
 const news = readPosts("news");
