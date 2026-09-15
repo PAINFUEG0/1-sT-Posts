@@ -1,0 +1,26 @@
+name: Sync Posts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "blogs/**"
+      - "news/**"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm i
+
+      - run: node sync.js
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}

@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "sync": "node sync.js"
+  },
+  "dependencies": {
+    "mongoose": "8.24.4"
+  },
+  "devDependencies": {
+    "@vercel/node": "13.0.1"
+  }
+}
