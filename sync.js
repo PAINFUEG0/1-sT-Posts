@@ -19,7 +19,7 @@ const readPosts = (T) =>
     .map((id) => ({
       id,
       uri: `https://raw.githubusercontent.com/PAINFUEG0/1-sT-Posts/main/${T}/${id}/index.html`,
-      image: `https://raw.githubusercontent.com/PAINFUEG0/1-sT-Posts/main/${T}/${id}/image.png`,
+      image: `https://raw.githubusercontent.com/PAINFUEG0/1-sT-Posts/main/${T}/${id}/index.png`,
       ...JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, T, id, "meta.json"), "utf8")),
     }));
 
