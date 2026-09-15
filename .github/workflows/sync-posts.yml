@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "blogs/**"
-      - "news/**"
+    # paths:
+    #   - "blogs/**"
+    #   - "news/**"
 
 jobs:
   sync:

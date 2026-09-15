@@ -18,9 +18,9 @@ const readPosts = (T) =>
     .filter((id) => fs.statSync(path.resolve(import.meta.dirname, T, id)).isDirectory())
     .map((id) => ({
       id,
-      image: `https://github.com/PAINFUEG0/1-sT-Posts/blob/main/${T}/${id}/image.png`,
+      uri: `https://raw.githubusercontent.com/PAINFUEG0/1-sT-Posts/main/${T}/${id}/index.html`,
+      image: `https://raw.githubusercontent.com/PAINFUEG0/1-sT-Posts/main/${T}/${id}/image.png`,
       ...JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, T, id, "meta.json"), "utf8")),
-      uri: `https://raw.githubusercontent.com/PAINFUEG0/1-sT-Posts/refs/heads/main/${T}/${id}/index.html`,
     }));
 
 const news = readPosts("news");
