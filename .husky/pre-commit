@@ -1,0 +1,3 @@
+node scripts/img.js
+npm run format
+git add *.html

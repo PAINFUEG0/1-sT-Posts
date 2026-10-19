@@ -21,6 +21,6 @@ jobs:
 
       - run: npm i
 
-      - run: node sync.js
+      - run: node scripts/sync.js
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}

@@ -1,0 +1,6 @@
+{
+  "date": "10-16-2026",
+  "category": "Tutorial",
+  "title": "Processing HTML with Cheerio in Node",
+  "description": "How to load, transform, and rewrite HTML files server-side using Cheerio, with a practical image-URL rewriting example."
+}

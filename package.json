@@ -1,12 +1,17 @@
 {
   "type": "module",
   "scripts": {
-    "sync": "node sync.js"
+    "sync": "node scripts/sync.js",
+    "format": "prettier --log-level error --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "mongoose": "8.24.4"
   },
   "devDependencies": {
-    "@vercel/node": "13.0.1"
+    "@vercel/node": "13.0.1",
+    "cheerio": "^1.2.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.9.10"
   }
 }
